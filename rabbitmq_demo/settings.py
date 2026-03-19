@@ -205,19 +205,10 @@ CELERY_TASK_DEFAULT_EXCHANGE = 'default'
 CELERY_TASK_DEFAULT_ROUTING_KEY = 'default'
 
 # Django Tasks Configuration - Using Celery with RabbitMQ
-# TASKS = {
-#     'default': {
-#         # This package bridges Django tasks with Celery
-#         'BACKEND': 'django_tasks_db.DatabaseBackend',
-#     }
-# }
 TASKS = {
     'default': {
         # This package bridges Django tasks with Celery
-        'BACKEND': 'django_tasks_celery.CeleryTaskBackend',
-        'OPTIONS': {
-            'celery_app_path': 'rabbitmq_demo.celery.app',
-        }
+        'BACKEND': 'django_tasks_db.DatabaseBackend',
     }
 }
 
